@@ -31,4 +31,9 @@ adult = diff_year>=18
 welcome_message = "Welcome" if adult else "Sorry, too young"
 print(welcome_message)
 
-#Answer: "Variables are names or labels that refer to an object, not its contents. A variable x=10 is not a box containing 10, the box represents 10 as a label.
+# Answer: "Variables are names or labels that refer to an object, not its contents. A variable x=10 is not a box containing 10, the box represents 10 as a label.
+
+# Week 3 Lecture 1
+
+# Week 3 Lecture 2
+
