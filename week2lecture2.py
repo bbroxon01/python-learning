@@ -7,9 +7,13 @@ print(type(number))
 
 # These lines have errors. Fix them to be valid AND follow PEP 8:
 # 1st_name = "Taylor"
-# user_age = 21
-# class_name = "Computer Science"
-# my_score = 100
+first_name = "Taylor"
+# user-age = 21
+student_age = 21
+# class = "Computer Science"
+course__name = "Computer Science"
+# My Score = 100
+my_score = 100
 
 # Run this code and explain what you observe:
 a = 256
@@ -32,8 +36,3 @@ welcome_message = "Welcome" if adult else "Sorry, too young"
 print(welcome_message)
 
 # Answer: "Variables are names or labels that refer to an object, not its contents. A variable x=10 is not a box containing 10, the box represents 10 as a label.
-
-# Week 3 Lecture 1
-
-# Week 3 Lecture 2
-
