@@ -33,7 +33,7 @@ print(Line1 + "\n" + "\t" + Line2 + "\n" + "\t" + Line3)
 
 first_name = "alice"
 last_name = "smith"
-gpa = 3.4537
+gpa = 3.8537
 on_deans_list = True
 student_name = "Name:" + " " + (f"{first_name.capitalize()} {last_name.capitalize()}")
 deans_list = gpa >= 3.5
@@ -45,3 +45,28 @@ print("Student Report")
 print("--------------")
 print(student_name)
 print(f"GPA:\t{gpa:.2f}\n{status}")
+#2.3
+
+#Item: Widget
+#Price: $19.99
+#Quantity: 3
+#-----------
+#Subtotal: $ 59.97
+#Tax (7%): $ 4.20
+#Total: $ 64.17
+
+item = "Widget"
+price = 19.99
+quantity = 3
+tax_rate = 0.07
+subtotal = price * quantity
+tax = subtotal * tax_rate
+total = subtotal + tax
+print("Item:" + " " + item)
+print("Price:" + " " + f"${price:.2f}")
+print("Quantity:" + " "+ str(quantity))
+print("-----------")
+print(f"Subtotal: $ {subtotal:.2f}")
+print(f"Tax (7%): $ {tax:.2f}")
+print(f"Total: $ {total:.2f}")
+# End of week4lecture1.py
