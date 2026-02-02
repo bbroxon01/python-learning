@@ -1,5 +1,5 @@
 # Week 3 Lecture 2
-
+#3.1
 a = 42 # integer
 print(type(a))
 b = 42.0 # float
@@ -25,10 +25,12 @@ print(separator)
 print(length)
 # 3.3
 # This code has type-related errors. Fix them!
-quantity = input("How many items? ") # User enters: 3
-price = "9.99"
-subtotal = quantity * price
-tax_rate = "0.07"
-tax = subtotal * tax_rate
+quantity = int(input("How many items? ")) # User enters: 3
+price = 9.99
+subtotal = quantity * float(price)
+tax_rate = (f"{0.07:.2f}")
+tax = subtotal * float(tax_rate)
 total = subtotal + tax
-print("Total: $" + total)
+print("Total: $" + f"{total:.2f}")
+
+#3.4
