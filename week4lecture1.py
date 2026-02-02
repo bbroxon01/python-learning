@@ -40,7 +40,7 @@ deans_list = gpa >= 3.5
 if deans_list:
     status = "Status:" + " " + "Dean's List"
 else: 
-    status = "Status:" + " " + "Better luck next time"
+    status = "Status:" + " " + "Get your grades up!"
 print("Student Report")
 print("--------------")
 print(student_name)
