@@ -70,3 +70,24 @@ print(f"Subtotal: $ {subtotal:.2f}")
 print(f"Tax (7%): $ {tax:.2f}")
 print(f"Total: $ {total:.2f}")
 # End of week4lecture1.py
+
+# Beginning of week4lecture2.py
+# 3.1
+
+# write a program that asks for the user's favorite color and food, then prints a message using both
+favorite_food = input("Enter your favorite food: ")
+favorite_color = input("Enter your favorite color: ")
+print(f"Your favorite food is {favorite_food}")
+print(f"Your favorite color is {favorite_color}")
+#3.2
+
+user_name = input("Enter your name: ")
+print(f"Hello, {user_name}!")
+num1 = input("Enter a number: ")
+num2 = input("Enter another number: ")
+sum = float(num1) + float(num2)
+difference = float(num1) - float(num2)
+product = float(num1) * float(num2)
+print(f"The sum of these two numbers is: {int(sum)}, The difference is: {int(difference)}, The product is: {int(product)}")
+#3.3
+
