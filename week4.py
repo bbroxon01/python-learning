@@ -83,11 +83,23 @@ print(f"Your favorite color is {favorite_color}")
 
 user_name = input("Enter your name: ")
 print(f"Hello, {user_name}!")
-num1 = input("Enter a number: ")
-num2 = input("Enter another number: ")
+num1 = int(input("Enter a number: "))
+num2 = int(input("Enter another number: "))
 sum = float(num1) + float(num2)
 difference = float(num1) - float(num2)
 product = float(num1) * float(num2)
 print(f"The sum of these two numbers is: {int(sum)}, The difference is: {int(difference)}, The product is: {int(product)}")
 #3.3
 
+#Create tip calculator
+bill_amount = float(input("Enter the bill amount: "))
+tip_percentage = int(input("Enter the tip percentage as an integer: "))
+tip_amount = (float(f"{bill_amount:.2f}") * (1 * tip_percentage / 100))
+total_amount = bill_amount + (float(f"{tip_amount:.2f}"))
+print("=== Tip Calculator ===")
+print(f"Bill Amount: ${bill_amount:.2f}")
+print(f"Tip Percentage: {tip_percentage}%")
+print(" ")
+print(f"Tip Amount: ${tip_amount:.2f}")
+print(f"Total Amount: ${total_amount:.2f}")
+#3.4
