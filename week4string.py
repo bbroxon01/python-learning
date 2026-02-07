@@ -53,18 +53,3 @@ last_three_reversed = text3[-3:][::-1]
 print(last_three_reversed)  # "!dl"
 
 #3.1
-first_name = input("Enter your first name: ")
-last_name = input("Enter your last name: ")
-full_name = first_name.upper() + " " + last_name.upper()
-birth_year = input("What year were you born? ")
-hobby = input("Enter your favorite hobby: ")
-age = 2026 - int(birth_year)
-print("=" * 25)
-print("   USER PROFILE CARD   ")
-print("=" * 25)
-print(f"Name:\t{full_name}")
-print(f"Age:\t{age}")
-print(f"Hobby:\t{hobby}")
-print("-" * 25)
-print("Thank you for creating your profile!")
-print("=" * 25)
