@@ -1,4 +1,4 @@
-# week4lecture1.py
+#beginning of week4lecture1.py
 # 1.1
 # Produce the following output using print statements:
 print("Welcome to Python Programming")
@@ -102,4 +102,4 @@ print(f"Tip Percentage: {tip_percentage}%")
 print(" ")
 print(f"Tip Amount: ${tip_amount:.2f}")
 print(f"Total Amount: ${total_amount:.2f}")
-#3.4
+# End of week4lecture1.py
