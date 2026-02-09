@@ -53,3 +53,39 @@ last_three_reversed = text3[-3:][::-1]
 print(last_three_reversed)  # "!dl"
 
 #3.1
+text = "hello world, welcome to PYTHON"
+# Convert to uppercase
+upper_text = text.upper()
+print(upper_text)  # "HELLO WORLD, WELCOME TO PYTHON"
+# Convert to lowercase
+lower_text = text.lower()
+print(lower_text)  # "hello world, welcome to python"
+# Convert to title case
+title_text = text.title()
+print(title_text)  # "Hello World, Welcome To Python"
+
+#3.2
+sentence = input("Enter a sentence: ")
+length = len(sentence)
+a_count = sentence.count('a')
+hello_sentence = sentence.startswith("Hello")
+end_sentence = sentence.endswith(". ! ?")
+print(f"Length of the sentence: {length}")
+print(f"Number of 'a' characters: {a_count}")
+print(f"Sentence starts with Hello: {bool(hello_sentence)}")
+print(f"Sentence ends with punctuation: {bool(end_sentence)}")
+
+#3.3
+# Messy user input
+name = "  JOHN DOE   "
+email = "   John.Doe@Email.COM   "
+phone = "   (555) 123-4567   "
+
+clean_name = name.strip().title()
+clean_email = email.strip().lower()
+clean_phone = phone.strip().replace(" ", "").replace("(", "").replace(")", "").replace("-", "")
+print(f"Clean Name: {clean_name}")
+print(f"Clean Email: {clean_email}")
+print(f"Clean Phone: {clean_phone}")
+
+# End of week 4 exercises

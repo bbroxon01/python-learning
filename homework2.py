@@ -1,3 +1,4 @@
+#coding problem 1
 first_name = input("Enter your first name: ")
 last_name = input("Enter your last name: ")
 full_name = first_name.upper() + " " + last_name.upper()
@@ -14,3 +15,26 @@ print(f"Hobby:\t{hobby:>{width-8}}")
 print("-" * width)
 print("Thank you for creating your profile!")
 print("=" * width)
+
+# coding problem 2
+sentence = input("Enter a sentence: ")
+total_length = len(sentence)
+short_length = len(sentence.replace(" ", ""))
+word_count = len(sentence.split())
+vowel_count = sum(1 for char in sentence.lower() if char in 'aeiou')
+upper_sentence = sentence.upper()
+lower_sentence = sentence.lower()
+reversed_sentence = sentence[::-1]
+
+print("=== Sentence Analysis ===".center(30) + "\n")
+print("Entered Sentence: ", sentence + "\n")
+print("--- Analysis Results ---".center(30))
+print(f"Sentence Length (with spaces): {total_length}")
+print(f" Sentence Length (excluding spaces): {short_length}")
+print(f"Word Count: {word_count}")
+print(f"Vowel Count: {vowel_count}")
+print(f"Uppercase: {upper_sentence}")
+print(f"Lowercase: {lower_sentence}")
+print(f"Reversed: {reversed_sentence}")
+print(f"Starts with capital letter: {bool(sentence[0].isupper())}")
+print(f"Ends with punctuation: {bool(sentence.endswith(('.', '!', '?')))}")
