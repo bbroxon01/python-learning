@@ -11,11 +11,19 @@ humidity = 40
 if temperature < 90 and humidity < 80:
     print("Pleasant weather")
 
-ride_access = input("Enter your height in inches: " +"\n" + "Enter your age: " + "\n" + "Do you have adult supervision? (yes/no): ")
-
-if ride_height >= 48 and age >= 8:
+#advanced
+height = input("Enter your height in inches: ")
+age = input("Enter your age: ")
+supervision = input("Do you have adult supervision? (yes/no): ")
+ride_height = int(height)
+age = int(age)
+adult_supervision = supervision.lower() == 'yes'
+ride_requirement = ride_height >= 48 and age >= 8 or (ride_height >= 48 and adult_supervision)
+ride_access = bool(ride_requirement or adult_supervision) == True
+fun_none = bool(ride_requirement) == False
+if ride_access:
     print("You can go on the ride!")
-elif ride_height >= 48 and adult_supervision:
+elif adult_supervision:
     print("You can go on the ride with adult supervision.")
 else:  
     print("You are too young for the ride.")
