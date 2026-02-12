@@ -6,7 +6,6 @@ birth_year = input("What year were you born? ")
 hobby = input("Enter your favorite hobby: ")
 age = str(2026 - int(birth_year))
 width = 36
-fillchar = " "
 print("=" * width)
 print("   USER PROFILE CARD   ".center(width))
 print("=" * width)
