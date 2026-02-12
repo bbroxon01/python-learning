@@ -7,4 +7,4 @@ for i in range(10000):
     if res[0] == '2' and res[1] == '0' and res[2] == '2' and res[3] == '6':
         print(data, i, res)
         break
-       
+
