@@ -96,5 +96,61 @@ else:
     discount = 0.0
 total = amount * (1 - discount)
 print(f"Total amount after discount: ${total:.2f}")
+# end of week6lecture1 exercises
 
+#beginning of week6lecture2 exercises
+# unit 1 beginner exercise
+
+age = int(input("Enter your age: "))
+if 0 <= age < 120:
+    print("Valid age")
+else:
+    print("Invalid age")    
+
+# unit 1 intermediate exercise
+phone_number = input("Enter your phone number: ")
+if len(phone_number.replace("(", "").replace(")", "").replace("-", "")) == 10 and phone_number.replace("(", "").replace(")", "").replace("-", "").isdigit():
+    print("Valid phone number")
+elif len(phone_number.replace("(", "").replace(")", "").replace("-", "")) != 10 and phone_number.replace("(", "").replace(")", "").replace("-", "").isdigit():
+    print("Invalid phone number - incorrect length")
+elif not phone_number.replace("(", "").replace(")", "").replace("-", "").isdigit():
+    print("Invalid phone number - contains non-numeric characters")
     
+# unit 1 advanced exercise
+password = input("Create a password: ")
+if len(password) < 8 and any(c.isdigit() for c in password) and any(c.isupper() for c in password) and any(c.islower() for c in password) and password.lower() != "password":
+    print("Password too short")
+elif len(password) >= 8 and not any(c.isdigit() for c in password) and any(c.isupper() for c in password) and any(c.islower() for c in password) and password.lower() != "password":
+    print("Password missing digit")
+elif len(password) >= 8 and any(c.isdigit() for c in password) and not any(c.isupper() for c in password) and any(c.islower() for c in password) and password.lower() != "password":
+    print("Password missing uppercase letter")
+elif len(password) >= 8 and any(c.isdigit() for c in password) and any(c.isupper() for c in password) and not any(c.islower() for c in password) and password.lower() != "password":
+    print("Password missing lowercase letter")
+elif len(password) >= 8 and any(c.isdigit() for c in password) and any(c.isupper() for c in password) and any(c.islower() for c in password) and password.lower() == "password":
+    print("Password cannot be 'password'")
+else:
+    print("Strong password")
+    
+# unit 2 beginner exercise
+favorite_color = input("Enter your favorite color:" +"\n" + "Your options are: red, blue, green, yellow, orange, and purple: ")
+if favorite_color.lower() in ["red", "blue", "green", "yellow", "orange", "purple"]:
+    print(f"Your favorite color is {favorite_color}")
+else:
+    print("Invalid color choice")
+    
+# unit 2 intermediate exercise
+email = input("Enter your email address: ")
+if not email:
+    print("Email address cannot be empty")
+elif not email.count('@') == 1:
+    print("Invalid email address - must contain exactly one '@' symbol")
+elif not email.endswith((".com", ".net", ".org")):
+    print("Invalid email address")
+
+#unit 2 advanced exercise
+
+#unit 3 beginner exercise
+
+#unit 3 intermediate exercise
+
+#unit 3 advanced exercise
