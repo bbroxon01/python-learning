@@ -36,3 +36,21 @@ print("Lowercase letters:", lowercase_count)
 print("Number of digits:", digit_count)
 print("Number of spaces:", space_count)
 print("Reversed sentence:", reversed_sentence)
+
+# Coding Problem 3
+numbers = [15, 8, 23, 42, 4, 16, 31, 7, 19, 11]
+print("Original list:", numbers)
+print(numbers[0] and numbers[-1])
+print(numbers[(len(numbers)//2)-2:(len(numbers)//2)+2])
+numbers.extend([99])
+numbers.insert(0, 0)
+numbers.remove(42)
+removed_number = numbers.pop()
+print("Removed number:", removed_number)
+if 23 in numbers:
+    print("True")
+else:
+    print("False")
+print(numbers.index(16))
+print("Final list:", numbers)
+print("Length of final list:", len(numbers))
