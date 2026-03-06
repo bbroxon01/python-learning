@@ -11,6 +11,28 @@ elif scale == "c" or scale == "C":
     print(f"{temp:.1f}°C = {fahrenheit:.1f}°F")
 else:    
     print("Invalid scale. Please enter C or F.")
-    
-# Coding Problem 4:
-    
+
+# Coding Problem 2
+sentence = input("Enter a sentence: ")
+total_characters = len(sentence)
+print("String Analyzer")
+print("Total characters:", total_characters)
+uppercase_count = 0
+lowercase_count = 0
+digit_count = 0
+space_count = 0
+reversed_sentence = sentence[::-1]
+for char in sentence:
+    if char.isupper():
+        uppercase_count += 1
+    elif char.islower():
+        lowercase_count += 1
+    elif char.isdigit():
+        digit_count += 1
+    elif char.isspace():
+        space_count += 1
+print("Uppercase letters:", uppercase_count)
+print("Lowercase letters:", lowercase_count)
+print("Number of digits:", digit_count)
+print("Number of spaces:", space_count)
+print("Reversed sentence:", reversed_sentence)
