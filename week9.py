@@ -30,6 +30,7 @@ num= 1
 while num <= 5:
     print(num)
     num += 1
+print("Done!")
 
 #advanced
 #for i in range(5):
@@ -62,8 +63,8 @@ print(f"You can double 1 {count} times before you exceed 1000.")
 word = "education"
 for vowel in word:
     if vowel in "aeiou":
-        print(f"{vowel}", end=" ")
-
+        print(f"{vowel}", end=" " + "\n")
+    
 #beginner 2
 num = int(input("Enter a number: "))
 running = True
@@ -72,10 +73,10 @@ while num != 0:
     num = int(input("Enter a number: "))
 print("Goodbye!")
 #intermediate 1
-i = (10, 0, -1)
-while i == i:
-    print(i)
-    i = (10, 0, -1)
+#i =(10, 0, -1)
+#while i == i:
+    #print(i)
+    #i = (10, 0, -1)
 #using while in this way causes an infinite loop
 
 #intermediate 2
@@ -85,5 +86,6 @@ while i == i:
 #    value *= 2
 #    print(value)
 for value in range(1, 1000):
+    value *= 2
     print(value)
-#can you make a range list between 1 and 1000? 
+#value is multiplied times 2 and does not stop at 1000
