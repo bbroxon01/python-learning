@@ -42,14 +42,19 @@ while i < 5:
 #unit 2
 #beginner
 #1
-
+#score = 0
+#while score < 100:
 #2
+#answer = "no"
+#while answer != "yes":
 
 #intermediate
 num = 2
 while num <= 10:
     print(num)
     num += 2
+#the original output would not have printed 10 because the condition did not say <= 10
+
 #advanced
 count = 1
 num = 1
@@ -58,6 +63,7 @@ while num <= 1000:
     num *= 2
     count += 1
 print(f"You can double 1 {count} times before you exceed 1000.")
+
 #unit 3
 #beginner 1
 word = "education"
@@ -67,16 +73,17 @@ for vowel in word:
     
 #beginner 2
 num = int(input("Enter a number: "))
-running = True
 while num != 0:
     print(num)
     num = int(input("Enter a number: "))
 print("Goodbye!")
+
 #intermediate 1
-#i =(10, 0, -1)
-#while i == i:
+#for i in range(10, -1, -1):
     #print(i)
-    #i = (10, 0, -1)
+# i = (10, 0, -1)
+# while i == i:
+    #print(i)
 #using while in this way causes an infinite loop
 
 #intermediate 2
@@ -89,3 +96,29 @@ for value in range(1, 1000):
     value *= 2
     print(value)
 #value is multiplied times 2 and does not stop at 1000
+
+#advanced
+running = True
+menu = "Menu:\n1. Add\n2. Subtract\n3. Exit"
+print(f"{menu}")
+while running:
+    choice = int(input())
+    if choice == 1:
+        num1 = int(input("Enter first number: "))
+        num2 = int(input("Enter second number: "))
+        print(f"The sum is: {num1 + num2}\n")
+        print(f"{menu}")
+        running = True
+    elif choice == 2:
+        num1 = int(input("Enter first number: "))
+        num2 = int(input("Enter second number: "))
+        print(f"The difference is: {num1 - num2}\n")
+        print(f"{menu}")
+        running = True
+    elif choice == 3:
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please try again.")
+        print(f"{menu}")
+        running = True
