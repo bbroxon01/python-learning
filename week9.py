@@ -122,3 +122,93 @@ while running:
         print("Invalid choice. Please try again.")
         print(f"{menu}")
         running = True
+
+#lecture 2
+#unit 1
+#beginner
+for i in range(10):
+    print(i)
+    if i == 5:
+        break
+
+#intermediate
+numbers = [3, 7, 9, 2, 11, 4, 13]
+for even in numbers:
+    if even % 2 == 0:
+        print(even)
+        break
+
+#advanced
+correct_password = "secure123"
+logged = False
+attempt = 1
+for attempt in range(3):
+    password = input("Enter a password: ")
+    if password == correct_password:
+        print("Access granted.")
+        logged = True
+        break
+else:
+    print("Access denied. Too many attempts.")
+
+#unit 2
+#beginner
+for i in range(6):
+    if i == 3:
+        continue
+    print(i)
+
+#intermediate
+scores = [85, -5, 92, 150, 78, 45, 200]
+total = 0
+count = 0
+for score in scores:
+    if score < 0 or score > 100:
+        continue
+    if score >= 0 and score <= 100:
+        total += score
+        count += 1
+        average = total / count
+print(f"Average score: {average:.2f}")
+#advanced
+words = ["hi", "xerox", "", "python", "xy", "code", "x", "algorithm"]
+for word in words:
+    if not word == "hi" and (len(word) <= 2):
+        continue
+    print(word)
+    
+#unit 3
+#beginner
+numbers = [1, 2, -3, 4, 5]
+for num in numbers:
+    if num < 0:
+        print(f"{num} is not positive")
+        break
+else:
+    print("All numbers are positive")
+    
+#intermediate
+word = "rhythm"
+vowels = "aeiou"
+for c in word:
+    if c in vowels:
+        print(c)
+else:
+    print("No vowels found")
+    
+#advanced
+data = [10, -5, 20, 0, 30, -15, 40]
+has_zero = False
+all_good = True
+i = 0
+while i < len(data) and not has_zero:
+    if data[i] == 0:
+        all_good = False
+        has_zero = True
+    elif data[i] > 0:
+        total += data[i]
+        print(f"Added {data[i]}, New total: {total}")
+    else:
+        all_good = False
+if all_good:
+    print(f"Processed all data")
