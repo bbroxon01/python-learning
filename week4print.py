@@ -62,9 +62,9 @@ tax_rate = 0.07
 subtotal = price * quantity
 tax = subtotal * tax_rate
 total = subtotal + tax
-print("Item:" + " " + item)
-print("Price:" + " " + f"${price:.2f}")
-print("Quantity:" + " "+ str(quantity))
+print("Item: " + item)
+print("Price: " + f"${price:.2f}")
+print("Quantity: " + str(quantity))
 print("-----------")
 print(f"Subtotal: $ {subtotal:.2f}")
 print(f"Tax (7%): $ {tax:.2f}")

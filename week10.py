@@ -23,14 +23,12 @@ for i in range(4):
 #exercise 3
 numbers = [2, 7, 3, 8, 5]
 pair = 10
-groups = []
+group = []
 for i in range(len(numbers)):
-    for j in range(i, len(numbers)):
-        number = numbers[i]
-        other_number = numbers[j]
-        if number + other_number  == pair:
-            groups.append((number, other_number))
-print(groups)
+    for j in range(i + 1, len(numbers)):
+        if numbers[i] + numbers[j] == pair:
+            print(f"{numbers[i]} + {numbers[j]} = 10")
+print()
 #unit 2
 #Exercise 1
 scores = [85, 92, 78, 95, 88]
@@ -74,10 +72,31 @@ prices = [5.99, 12.50, 3.25, 0, 9.99]
 total = 0
 item_count = 0
 for price in prices:
+    if price == 0:
+        break
     if price != 0:
-        if price == 0:
-            break
         total += price
         item_count +=1
 print(f"Items: {item_count}, Total: ${total:.2f}")
 #exercise 3
+# given a list of words, find
+#1 the total number of characters across all words (accumulator)
+#2 how many words have more than 4 characters (counter)
+#3 stop processing if you encounter the word "stop" (sentinel)
+words = ["cat", "elephant", "dog", "python", "STOP", "rhinoceros", "bat"]
+total_chars = 0
+long_count = 0
+for i in range(len(numbers)):
+    for j in range(i + 1, len(numbers)):
+        if numbers[i] + numbers[j] == pair:
+            print(f"{numbers[i]} + {numbers[j]} = 10")
+
+for word in words:
+    if word:
+        total_chars += len(word)
+    if word == "STOP":
+        break
+    if total_chars > 4:
+        long_count += 1
+print(f"Total characters: {total_chars}")
+print(f"Words longer than 4 chars: {long_count}")
