@@ -228,7 +228,7 @@ else:
     for i in range(len(order_descriptions)):
         print(f"{i + 1}. {order_descriptions[i]}")
         print(f"\t\t\t${order_prices[i]:.2f}")
-        print("-----------------------------")
+        print("-" * width)
         subtotal = 0
         for sum in order_prices:
             subtotal += sum
@@ -245,8 +245,8 @@ else:
             max_expensive_price = order_prices[i]
             max_expensive_index = i
     print("The most expensive pizza is: ")
-    print(f"{order_descriptions[max_expensive_index]} at ${max_expensive_price:.2f}")    
-
+    for max_expensive_index in order_descriptions:
+        print(f"{max_expensive_index} at\t{max_expensive_price:.2f}")
     # EXERCISE 9 — Count pizzas by size
     # Print a summary showing how many pizzas of each size were ordered.
     size_counts = {size: 0 for size in sizes}
