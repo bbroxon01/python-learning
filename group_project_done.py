@@ -216,6 +216,7 @@ else:
                 break
         if attempt == 3:
                 print("Discount code NOT applied.")
+                discount= 0
                 break
         else:
                 print("Invalid code")
