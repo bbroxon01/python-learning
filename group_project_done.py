@@ -202,7 +202,7 @@ else:
         user_discount= input("Type discount code (type 'none' to skip): ").upper()
         if not user_discount == "none" or "None":
             attempt += 1
-        print(f"amount of attempts: {attempt}".center(width))
+        print(f"amount of attempts: {attempt} out of 3".center(width))
         if user_discount == "STUDENT10":
                 print("10 percent discount applied!")
                 discount= (subtotal + tax) * .10
@@ -257,4 +257,7 @@ else:
                 print("-"*width)
                 print("Pizza Size Summary: ")
                 print(f"{size_counts[size]} {size} pizza(s)")
+                print("-=" * 16)
+                print("\n")
+                print("***********THANK YOU***********")
                 break
