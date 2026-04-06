@@ -42,5 +42,16 @@ calculate()
 #error is result was never printed inside of local environment
 
 #advanced
+def countdown(n):
+    if n <= 0:
+        print("Done")
+    else:
+        print(n)
+        countdown(n-1)
+countdown(3)
+#how many functions are on stack at the deepest point?
+#3
 
 #unit 2
+#beginner
+
