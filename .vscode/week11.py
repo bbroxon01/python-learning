@@ -89,27 +89,3 @@ print(f"x = {x}, y = {y}")
 
 #advanced
 
-#lecture 3
-#unit 1
-#beginner
-#predict the print order, then: what does test() print??
-#what happens if you uncomment print(x)?
-def first():
-    print("A")
-    second()
-    print("B")
-
-def second():
-    print("C")
-    
-first()
-
-def test():
-    x=5 
-    print(x)
-    
-test()
-
-#print(x)
-#does not work x is outside the def
- 
