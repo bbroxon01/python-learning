@@ -6,7 +6,7 @@
 
 #Exersise 1--Display the Menu
  #Top border
-width = 32
+width = 36
 print("=" * width)
 #Title
 print("PIZZA SIZES".center(width))
@@ -254,7 +254,7 @@ else:
         for size in sizes:
             if size in description:
                 size_counts[size] += 1
-                print("-----------------------------")
+                print("-"*width)
                 print("Pizza Size Summary: ")
                 print(f"{size_counts[size]} {size} pizza(s)")
                 break
