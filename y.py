@@ -1,1 +1,1 @@
-#advanced
+#exercises 1 by 1
