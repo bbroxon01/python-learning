@@ -24,15 +24,19 @@ while choice not in ["1", "2", "3", "4"]:
 order_descriptions.append(pizza_sizes[size_choice])
 order_prices.append(float(base_prices[size_choice]))
 
+print("Choose your topping/s\nType \"done\" when finished")
+print("=" *width)
 for topping in range(len(topping_names)):
     print(f"{topping + 1}. ",  f"{topping_names[topping]}")
 selection = "Bad"
 all_toppings = []
 while not selection == "done":
-    selection = input("Choose a topping/s\nType \"done\" when finished ")
+    selection = input("Choose another topping or type \"done\"")
     if selection == "done":
         for topping in all_toppings:
             print(f"Added {topping}")
+            for topping in all_toppings:
+                print(all_toppings)
         break
     if not selection.isdigit():
         print("Invalid Selection")
@@ -43,8 +47,7 @@ while not selection == "done":
     topping_name = topping_names[int(selection)+1] 
     if topping_name not in all_toppings:
         all_toppings.append(topping_name)
-        
-        price += topping_price
+        topping_price *= all_toppings[topping]
         print(f"Added {topping_name}")
     else:
         print("Duplicate Selection")
