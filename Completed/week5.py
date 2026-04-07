@@ -27,17 +27,67 @@ elif adult_supervision:
     print("You can go on the ride with adult supervision.")
 else:  
     print("You are too young for the ride.")
-    
-#week5lecture2 exercises
-#unit 1 exercise beginner
-#write in order of execution
 
+#unit 2 exercises
+#beginner
+#print(True or False and False)
+#True
+#print(not True or True)
+#True
+#print(5 > 3 and 2 < 1 or 4 == 4)
+#True    
+
+#intermediate
+#result = (x >= 0 and x <= 100) or (x == -1 and not error)
+
+#advanced
+gpa = 3.6
+full_time = True
+service_hours = 150
+if gpa >= 3.7 and full_time or gpa >= 3.5 and full_time and service_hours >= 100:
+    print("qualified")
+#yes
+
+#unit 3
+#beginner
+#false and (10 / 0 > 1) - false
+#true or (10 / 0 > 1) - true
+#true and (5 > 3) - true
+
+#intermediate
+my_list = []
+#if my_list[0] > 10:
+    #print("First element is large")
+if len(my_list) > 0 and int(my_list[0]) > 10:
+    print("First element is large")
+elif int(my_list[0]) <= 10:
+    print("First element not large")
+else:
+    print("Empty list")
+
+#advanced
+result1 = "" or "default" or "backup"
+#false or true or true - stops after first or true because true or anything never evaluates because it is not necessary
+print(result1)
+result2 = "hello" and "" and "world"
+#the same evaluation as the first result which = false
+print(result2)
+#prints false because once "True or" is evaluated, it is always true 
+result3 = 0 or [] or "found" or None
+print(result3)
+#end of week 5 lecture 1 exercises
+
+#week 5 lecture 2 exercises
+
+#unit 1
+#beginner
+#write in order of execution
 x = 10 #execution 1 
 y = 20 #execution 2
 z = x + y #execution 3
 print(z) #execution 4
 
-#unit 1 exercise intermediate
+#intermediate
 step1 = "Mix ingredients"
 step2 = "Bake for 30 minutes"
 step3 = "Let it cool"
@@ -45,7 +95,7 @@ step4 = "Serve and enjoy"
 recipe = [step1, step2, step3, step4]
 #you would not want to do step 4 before step 3 because the food may be too hot to eat and the ingredients may not have settled properly.
 
-#unit 1 exercise advanced 
+#advanced 
 #For example, in a game where the player has to navigate through a maze, a GOTO statement could be used to jump back to a previous point in the maze if the player gets lost. However, this can be achieved using a loop and conditional statements without the need for a GOTO statement.
 #sketch this situation
 player = "Player1"
@@ -59,13 +109,14 @@ while current_position < len(maze):
     else:
         current_position += 1  # Move to the next position
 
-#unit 2 exercise beginner
+#unit 2 
+#beginner
 age = 20
 if age >= 18:
     print("You are an adult.")
     print("You can vote.")
 
-#unit 2 exercise intermediate
+#intermediate
 x = 7
 if x > 5:
     print("A")
@@ -74,7 +125,7 @@ if x > 5:
         print("C")
         print("D")    
         
-#unit 2 exercise advanced
+#advanced
 score = 100
 if score == 100:
     print("Perfect score!")
@@ -82,14 +133,15 @@ if score == 100:
     if score < 100:
         print("Keep trying!")
 
-#unit 3 exercise beginner
+#unit 3
+#beginner
 #write if-else statement that checks if a number is even or odd and prints an appropriate message
 number = 10
 if number % 2 == 0:
     print("The number is even.")
 else:    print("The number is odd.")
 
-#unit 3 exercise intermediate
+#intermediate
 #write an if-elif-else chain that converts numerical grades into letter grades (A, B, C, D, F)
 grade = 84
 if grade >= 90:
@@ -103,6 +155,7 @@ elif grade >= 80 and grade <= 82:
 else:
     print("C or below")
 
+#advanced
 weight = int(input("Enter the weight of the package in pounds: "))
 region = input("Enter the region (domestic/international): ")
 

@@ -32,7 +32,7 @@ def print_star():
 print_star()
 print_star()
 #intermediate
-#define a function COmpliment() that prints "YOu are great!"
+#define a function Compliment() that prints "You are great!"
 def compliment():
     print("You are great!")
 compliment()
