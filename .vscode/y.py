@@ -15,4 +15,5 @@ elif user_name in taken:
     errors.append("Invalid username")
 else:
     print("Valid username")
-print(errors)
+if not errors == []:
+    print(errors)
