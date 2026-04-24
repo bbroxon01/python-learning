@@ -58,3 +58,20 @@ exam3 = 88
 def final_grade(grade, bonus):
     """Add bonus to grade for final grade"""
     
+#Unit 3
+#beginner
+grid = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+for g in grid:
+    print(g, end="\n")
+    
+for row in grid:
+    for value in row:
+        print(value, end= ' ')
+    print()
+print(f"{grid[0]}")
+#print whole row with one index
+#print specific location with two indexes

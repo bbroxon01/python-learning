@@ -8,7 +8,7 @@ displays a formatted report.
 Functions:
 is_valid_score — Helper: validate a single score
 get_exam_scores — Collect n exam scores with validation
-get_validated_scores— Helper: retry loop for score entry
+get_validated_scores — Helper: retry loop for score entry
 calculate_average — Compute mean of a scores list
 determine_letter_grade — Map average to letter grade
 determine_standing — Map average to academic standing
@@ -21,46 +21,68 @@ test_grade_tracker — Run all unit tests"""
     average = calculate_average()
     letter_grade = determine_letter_grade()
     standing = determine_standing()"""
-    
-"""get_student_name — Prompt for and return student name"""
-def get_student_name():
-    name = input("Enter your name: ".istitle)
-    return name
+"""main()"""
+
 """get exam scores"""
-def get_exam_scores():
+"""def get_exam_scores():
     exam_score = input("Enter an exam score: ".isdigit)
-    if not exam_score == "" or 0 < exam_score < 100:
-        exam_score = is_valid_score()
-        return 
-""""main — Orchestrate the full program"""
+    if not exam_score == "" or 0 <= exam_score <= 100:
+        exam_scores
+        return exam_score"""
+score = []
 def main():
     """Student Grade Tracker Orchestrator"""
-    print("=== Student Grade Tracker ===")
-    get_student_name()
+    menu()
+        #get_student_name()
     get_exam_scores()
+    #calculate_average()
+    #display_report()
+    #test_grade_tracker()
     
+def menu():
+    print("Welcome!")
+    return get_student_name()
     
-   
-"""validate scores"""
-
-def calculate_score(get_exam_scores, total= (100 * len(scores))):
-    """Get scores"""
-    def get_exam_scores(scores):
-        
-    """Percentage as float"""
+"""Get student name — Prompt for and return student name"""
+def get_student_name():
+    return input("Enter your name: ".istitle)
+"""Get exam scores"""    
+def get_exam_scores():
+    return int(input("Enter a score: "))
+    get_validated_scores()
     
-    """Validate Score/s"""
-    if is_valid_score():
-        get_exam_scores
-    percentage = (score / total) * 100
-    return round(percentage, 1)
-def is_valid_score(score):
-    return 0 <= score < 100
+def get_validated_scores(scores):
+    if not is_valid_score():
+        scores.remove(score)
+        message = print("One score invalid\nDo you want to enter another score")
+        if message == "no":
+            return scores
+        else:
+            score
+    else:
+            if not False:
+                return scores
+    def is_valid_score():
+        scores = []
+        if not 0 <= score <= 100:
+            return score
+        else:
+            scores.append(score)
+            return scores
+#def calculate_average(get_exam_scores, total= (100)):
+"""Get scores"""
+"""Validate Score/s"""
+    #if is_valid_score():
+     #   get_exam_scores()
+    #percentage = (score / total) * 100
+    #return round(percentage, 1)
+#def is_valid_score(score):
+    #return 0 <= score < 100
 
 # TESTING THE FUNCTION
-def test_calculate_grade():
-    """Test the calculate_grade function"""
-    print("Testing calculate_grade():")
+"""def test_calculate_grade():"""
+"""Test the calculate_grade function"""
+"""print("Testing calculate_grade():")
     
     # Test 1: Normal case
     result = calculate_grade(85, 100)
@@ -107,7 +129,7 @@ def test_calculate_grade():
     else:
         print("FAIL")
 
-test_calculate_grade()
+test_calculate_grade()"""
 
 # DEBUGGING EXAMPLE
 
