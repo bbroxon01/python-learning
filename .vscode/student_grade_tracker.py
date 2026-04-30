@@ -32,43 +32,44 @@ test_grade_tracker — Run all unit tests"""
 score = []
 def main():
     """Student Grade Tracker Orchestrator"""
-    menu()
-        #get_student_name()
+    get_student_name()
     get_exam_scores()
-    #calculate_average()
-    #display_report()
-    #test_grade_tracker()
-    
-def menu():
-    print("Welcome!")
-    return get_student_name()
-    
+    calculate_average()
+    display_report()
+    test_grade_tracker()
+
 """Get student name — Prompt for and return student name"""
 def get_student_name():
-    return input("Enter your name: ".istitle)
-"""Get exam scores"""    
-def get_exam_scores():
-    return int(input("Enter a score: "))
-    get_validated_scores()
-    
-def get_validated_scores(scores):
-    if not is_valid_score():
-        scores.remove(score)
-        message = print("One score invalid\nDo you want to enter another score")
-        if message == "no":
-            return scores
-        else:
-            score
-    else:
-            if not False:
-                return scores
-    def is_valid_score():
+    print("Welcome!")
+    return input("Enter your name: ".istitle())
+def is_valid_score():
         scores = []
         if not 0 <= score <= 100:
-            return score
+            return False
         else:
             scores.append(score)
-            return scores
+            return True
+"""Get exam scores"""    
+def get_exam_scores():
+    attempts = 0
+    while attempts < 3:
+        score = int(input("Enter a score: "))
+        if is_valid_score(score):
+            return score
+        attempts += 1
+    print("Maximum scores input")
+    return None
+def is_valid_score(score):
+    if not 0 <= score <= 100:
+        print("Invalid score! Please enter a value between 0 and 100.")
+        return False
+    return True
+def get_validated_scores(scores):
+    for score in scores:
+        if not is_valid_score(score):
+            scores.remove(score)
+            
+        return scores
 #def calculate_average(get_exam_scores, total= (100)):
 """Get scores"""
 """Validate Score/s"""
