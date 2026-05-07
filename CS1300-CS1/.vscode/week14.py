@@ -1,22 +1,5 @@
 #beginning of week 14 lecture 1
 #unit 1
-
-#beginner
-
-#intermediate
-
-#advanced
-
-#unit 2
-
-#beginner
-
-#intermediate
-
-#advanced
-
-#beginning of week 14 lecture 2
-#unit 1
 #beginner
 rgb_color = (255, 128, 0)
 
@@ -48,16 +31,37 @@ steve, derrick, jason = classroom
 print(f"First student's information: {steve}")
 
 #advanced
-student_name = "Jason"
-exam1= 94
-exam2 = 90
-exam3 = 88
+#creat original student info tuple
+student_info = ("Jason", [94, 90, 88])
+final_grade = f"{sum(student_info[1]) / len(student_info[1]):.2f}"
+updated_student_info = (student_info[0], student_info[1], final_grade)
+#add fourth exam score
+updated_student_info[1].append(95)
+#calculate new average
+final_grade = f"{sum(updated_student_info[1]) / len(updated_student_info[1]):.2f}"
+updated_student_info = (updated_student_info[0], updated_student_info[1], final_grade)
+
+print(f"Original student info: {student_info}")
+print(f"Updated student info: {updated_student_info}")
 
 #unit 2
 #beginner
-def final_grade(grade, bonus):
+grades = [88, 92, 79]
+date = (2024, 6, 1)
+def final_grade(grades, bonus=5):
     """Add bonus to grade for final grade"""
-    
+    for grade in grades:
+        grade += bonus
+    return grade, date
+print(final_grade(grades))
+#list was used for grades because it is mutable and can be modified, while tuple was used for date because it is immutable and should not be changed.
+
+#intermediate
+def find_range():
+
+#advanced
+
+  
 #Unit 3
 #beginner
 grid = [
@@ -75,3 +79,7 @@ for row in grid:
 print(f"{grid[0]}")
 #print whole row with one index
 #print specific location with two indexes
+
+#intermediate
+
+#advanced
