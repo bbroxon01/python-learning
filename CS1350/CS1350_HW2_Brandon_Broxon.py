@@ -87,3 +87,16 @@ print(shopping_cart_total)
 #e) {"a": 1} # invalid (reason: dictionary)
 #f) frozenset({1,2}) # valid (reason: frozenset)
 
+# 2.2
+
+
+#2.3
+#beginner 1
+colors = {"apple": "red", "banana": "yellow", "grape": "purple"}
+for fruit, color in colors.items():
+    print(f"{fruit} is {color}")
+
+#beginner 2
+#2. Without running the code, predict what list(colors.items()) returns.
+
+#it should return a list of tuples for each fruit with it's associated color
