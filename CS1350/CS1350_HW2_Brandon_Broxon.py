@@ -98,5 +98,61 @@ for fruit, color in colors.items():
 
 #beginner 2
 #2. Without running the code, predict what list(colors.items()) returns.
+#it should return a list of tuples for each fruit with it's associated 
 
-#it should return a list of tuples for each fruit with it's associated color
+#intermediate
+prices = {"coffee": 4.50, "tea": 3.00, "juice": 5.25}
+count = 0
+for item, price in prices.items():
+    taxed_price = price * 1.10
+    print(f"{item}:" + f" ${price:.2f}"+ " + tax = " + f"${taxed_price:.2f}")
+    if price > 4.00:
+        count += 1
+        print(f"There are {count} items that cost more than $4.00")        
+
+x=10
+y=20
+x, y = y, x
+
+first, *rest, last = [1, 2, 3, 4, 5]
+print(f"first= {first}, last= {last}, rest = {rest}")
+
+#advanced
+scores = {"Alice": 88, "Bob": 65, "Carol": 92, "Dave": 71, "Eve": 58}
+best_name, best_grade = max(scores.items(), key=lambda x: x[1])
+print(f"The student with the highest grade is {best_name} with a grade of {best_grade}.")
+passed = []
+failed = []
+for student, grade in scores.items():
+    if grade >= 70:
+        passed.append(student)
+    else:
+        failed.append(student)
+        
+print(f"These students passed: {passed}")
+print(f"These students failed: {failed}")
+
+average = sum(scores.values()) / len(scores)
+print(f"The class' average is {average}")
+deviation = []
+for student, grade in scores.items():
+    deviation = grade - average
+    print(f"{student}" +"'s grade is " + f"{abs(deviation):.1f}" + " from the average.")
+
+#advanced 4
+print("Items() Vs Keys() + Lookup")
+print("-" * 26)
+import time
+big_dict = {i: i*2 for i in range(50000)}
+start = time.time()
+for k, v in big_dict.items():
+    _ = k + v
+items_time = time.time() - start
+start = time.time()
+for k in big_dict.keys():
+    v = big_dict[k]
+    _ = k + v
+keys_time = time.time() - start
+print(f"items(): {items_time:.4f}s")
+print(f"keys() + lookup: {keys_time:.4f}s")
+print(f"items() is {keys_time/items_time:.1f}x faster")
