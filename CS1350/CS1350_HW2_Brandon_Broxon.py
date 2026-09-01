@@ -88,7 +88,45 @@ print(shopping_cart_total)
 #f) frozenset({1,2}) # valid (reason: frozenset)
 
 # 2.2
+#beginner
+temps = {"Monday": 72, "Tuesday": 75, "Wednesday": 68}
+print(temps.keys())
+print(temps.values())
+print(f"There are {len(temps.keys())} days")
 
+#intermediate
+temps = {"Monday": 72, "Tuesday": 75, "Wednesday": 68}
+print(max(temps.values()))
+print(min(temps.values()))
+if "Friday" not in temps.items():
+    print("Day not in temps")
+else:
+    print(temps.items("Friday"))
+
+temps.setdefault("Thursday", 70)
+print(temps.items())
+print(temps.keys())
+temps.setdefault("Friday", 69)
+print(temps.items())
+
+#advanced
+prices = {"laptop": 999, "phone": 699, "tablet": 449, "watch": 299}
+print(sum(prices.values()))
+print(f"{sum(prices.values()) / len(prices):.1f}")
+for item, price in prices.items():
+    min_value = min(prices.items())
+    max_value = max(prices.items())
+print(min_value)
+print(max_value)
+
+import sys
+view = prices.keys()
+as_list = list(prices.keys())
+print(f"View: {sys.getsizeof(view)} bytes")
+print(f"List: {sys.getsizeof(as_list)} bytes")
+
+prices.update({"tv": 1299, "desktop": 1599, "refrigerator": 2199})
+print(prices)
 
 #2.3
 #beginner 1
