@@ -128,3 +128,82 @@ for region, name, amount in sales:
 print(total_sales)
 print(by_salesperson)
 print(by_region)
+
+# SET Unit 1
+#beginner
+vowels = {"a", "e", "i", "o", "u"}
+numbers = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+compact_numbers = set(numbers)
+
+empty = {}
+#it is a dictionary, not a set
+#the proper way to build an empty set is:
+empty = set()
+
+#intermediate
+text = "mississippi"
+unique_letters = set(text)      
+#there are 4 unique letters
+
+emails = ["a@b.com", "c@d.com", "a@b.com", "e@f.com", "c@d.com"]
+unique_emails = set(emails) 
+smaller_emails = list(unique_emails)
+
+#Why does this fail? s = {[1, 2], [3, 4]}
+#because a set can not contain a list, let alone two. lists are mutable and sets only contain immutable elements
+
+#advanced
+import timeit
+
+list_time = timeit.timeit("999999 in list(range(1000000))", number=1000)
+set_time = timeit.timeit("999999 in set(range(1000000))", number=1000)
+print(f"List time: {list_time}")
+print(f"Set time: {set_time}")
+
+frozen = frozenset([1, 2, 3])
+graph = {frozen: [(1, 2), (2, 3)]}
+print(f"Graph with frozenset key: {graph}")
+
+edges = [(1, 2), (2, 3), (1, 3), (3, 4)]
+unique_edges = set(edges)
+print(f"Unique edges: {unique_edges}")
+
+#unit 2
+#beginner
+a = {1, 2, 3, 4}
+b = {3, 4, 5, 6}
+all = a | b
+both = a & b
+diff = a - b
+print(all, both, diff, sep="\n")
+
+#intermediate
+morning_shift = {"Alice", "Bob", "Carol"}
+evening_shift = {"Carol", "Dave", "Eve"}
+weekend_shift = {"Alice", "Eve", "Frank"}
+
+all_employees = morning_shift | evening_shift | weekend_shift
+any_shift = morning_shift & evening_shift & weekend_shift
+morning_only = morning_shift - evening_shift - weekend_shift
+one_shift = (morning_shift ^ evening_shift ^ weekend_shift)
+
+#unit 2
+#advanced
+prereqs_met = {"Alice", "Bob", "Carol", "Dave"}
+has_space = {"Bob", "Carol", "Eve", "Frank"}
+paid_tuition = {"Alice", "Carol", "Eve"}
+eligible_students = prereqs_met & has_space & paid_tuition
+unpaid_prereqs = prereqs_met - paid_tuition
+unmet_prereqs_and_unpaid = (prereqs_met - paid_tuition) & (paid_tuition - prereqs_met)
+
+#unit 3
+#beginner
+numbers = {1, 2, 3}
+numbers.add(4)
+numbers.discard(4)
+#numbers.remove(5) 
+#raises a KeyError because 5 is not in the set
+
+evens = {x for x in range(20) if x % 2 == 0}
+print(evens)
+
