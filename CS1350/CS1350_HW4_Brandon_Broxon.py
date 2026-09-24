@@ -234,17 +234,21 @@ def find_duplicates(numbers):
     return duplicates
 find_duplicates([1, 2, 2, 3, 3, 3, 4]) # {2, 3}
 
-employees = {
-"alice": {"Python", "SQL", "Excel", "Tableau"},
-"bob": {"Python", "Java", "SQL", "AWS"},
-"carol": {"Python", "R", "SQL", "Tableau"}
-}
+alice = {"Python", "SQL", "Excel", "Tableau"}
+bob = {"Python", "Java", "SQL", "AWS"}
+carol = {"Python", "R", "SQL", "Tableau"}
 
-all_skills = "alice" | "bob" | "carol"
-alice_skills = "alice" - "bob" - "carol"
-unique_skills = {}
-for employee, skills in employees:
-    if     
+all_skills = alice | bob | carol
+alice_skills = alice - bob - carol
+bob_skills = bob - alice - carol
+carol_skills = carol - alice - bob
 print(all_skills)
 print(alice_skills)
-print(unique_skills)
+print(bob_skills)
+print(carol_skills)
+
+match = []
+def find_match(first_word, second_word):
+    common = set(first_word) & set(second_word)
+    return print(common)
+find_match("hello", "world")
