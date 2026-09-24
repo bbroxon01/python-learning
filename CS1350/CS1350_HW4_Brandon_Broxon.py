@@ -207,3 +207,44 @@ numbers.discard(4)
 evens = {x for x in range(20) if x % 2 == 0}
 print(evens)
 
+#intermediate
+given_list = [4, 5, 2, 4, 8, 5, 2, 1, 9, 4]
+set_from_list = set(given_list)
+
+sentence = "To be or not to be that is the question"
+sentence = sentence.lower()
+sentence_words = set(sentence.split())
+print(sentence_words)
+
+expected = set(range(1, 11)) # 1 through 10
+actual = {1, 2, 4, 5, 7, 8, 10}
+actual_set = set(actual)
+missing = expected - actual_set
+print(missing)
+
+#advanced
+def find_duplicates(numbers):
+    seen = set()
+    duplicates = set()
+    for number in numbers:
+        if number in seen:
+            duplicates.add(number)
+        else:
+            seen.add(number)
+    return duplicates
+find_duplicates([1, 2, 2, 3, 3, 3, 4]) # {2, 3}
+
+employees = {
+"alice": {"Python", "SQL", "Excel", "Tableau"},
+"bob": {"Python", "Java", "SQL", "AWS"},
+"carol": {"Python", "R", "SQL", "Tableau"}
+}
+
+all_skills = "alice" | "bob" | "carol"
+alice_skills = "alice" - "bob" - "carol"
+unique_skills = {}
+for employee, skills in employees:
+    if     
+print(all_skills)
+print(alice_skills)
+print(unique_skills)
