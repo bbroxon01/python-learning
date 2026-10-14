@@ -223,3 +223,156 @@ if __name__ == "__main__":
     print(f"Total songs created: {Song.get_total_songs()}")
     print(f"Total playlists created: {Playlist.get_total_playlists()}")
 
+class GradeBook:
+    def __init__(self, course_name):
+        self.course_name = course_name
+        self._grades = {}
+
+# --- Display Methods ---
+    def __str__(self):
+        return f"GradeBook: {self.course_name} ({len(self._grades)} students)"
+    
+    def __repr__(self):
+        return f"GradeBook('{self.course_name}')"
+    
+    # --- Container Protocol ---
+    def __len__(self):
+        return len(self._grades)
+    def __getitem__(self, student):
+        if student in self._grades:
+            return self._grades[student]
+        else:
+            raise KeyError(f"Student '{student}' not found")
+    def __setitem__(self, student, grade):
+        if not (0 <= grade <= 100):
+            raise ValueError(f"Invalid grade: {grade}")
+        self._grades[student] = grade
+    def __contains__(self, student):
+        if student in self._grades:
+            return student in self._grades
+        else:
+            return False
+    def __iter__(self):
+        return iter(self._grades)
+    def __bool__(self):
+        return bool(self._grades)
+
+# --- Property ---
+    @property
+    def average(self):
+        if not self._grades:
+            return 0.0
+        return sum(self._grades.values()) / len(self._grades)
+    
+# --- Arithmetic Operators ---
+    def __add__(self, other):
+        new_course_name = f"{self.course_name} + {other.course_name}"
+        updated_gb = GradeBook(new_course_name)
+        for student, grade in self._grades.items():
+            updated_gb[student] = grade
+        for student, grade in other._grades.items():
+            if student in updated_gb:
+                updated_gb[student] = max(updated_gb[student], grade)
+            else:
+                updated_gb[student] = grade
+        return updated_gb
+
+    def __iadd__(self, other):
+        for student, grade in other._grades.items():
+            if student in self._grades:
+                self._grades[student] = max(self._grades[student], grade)
+            else:
+                self._grades[student] = grade
+        return self
+
+    def __mul__(self, factor):
+        new_course_name = f"{self.course_name} (curved)"
+        curved_gb = GradeBook(new_course_name)
+        for student, grade in self._grades.items():
+            curved_gb[student] = min(grade * factor, 100)
+        return curved_gb
+# --- Comparison Operators (compare by average) ---
+    def __eq__(self, other):
+        return abs(self.average - other.average) < 0.01
+
+    def __lt__(self, other):
+        return self.average < other.average
+
+    def __le__(self, other):
+        return self.average <= other.average
+    
+# Test your code
+if __name__ == "__main__":
+# === Part A: Display and Container ===
+    print("=== Part A: Container Protocol ===")
+    cs101 = GradeBook("CS 101")
+# __setitem__
+    cs101["Alice"] = 92
+    cs101["Bob"] = 78
+    cs101["Carol"] = 88
+    cs101["David"] = 95
+# __str__ and __repr__
+    print(cs101) # GradeBook: CS 101 (4 students)
+    print(repr(cs101)) # GradeBook('CS 101')
+# __getitem__
+    print(f"Alice's grade: {cs101['Alice']}") # 92
+# __contains__
+    print(f"Bob enrolled? {'Bob' in cs101}") # True
+    print(f"Eve enrolled? {'Eve' in cs101}") # False
+# __len__
+    print(f"Class size: {len(cs101)}") # 4
+# __iter__
+    print("Students:")
+    for student in cs101:
+        print(f" {student}: {cs101[student]}")
+# __bool__
+    empty = GradeBook("Empty")
+    print(f"cs101 has students? {bool(cs101)}") # True
+    print(f"empty has students? {bool(empty)}") # False
+# Validation
+    print("\nValidation test:")
+    try:
+        cs101["Eve"] = 150
+    except ValueError as e:
+        print(f" Caught: {e}")
+
+# === Part B: Arithmetic ===
+    print("\n=== Part B: Arithmetic ===")
+    math201 = GradeBook("Math 201")
+    math201["Alice"] = 85
+    math201["Bob"] = 90
+    math201["Eve"] = 76
+# __add__ — merge (keep higher grade)
+    combined = cs101 + math201
+    print(f"\n{combined}")
+    print("Merged grades:")
+    for student in combined:
+        print(f" {student}: {combined[student]}")
+# Alice: 92 (higher of 92, 85)
+# Bob: 90 (higher of 78, 90)
+# Carol: 88 (only in cs101)
+# David: 95 (only in cs101)
+# Eve: 76 (only in math201)
+# __mul__ — curve
+    curved = math201 * 1.1
+    print(f"\n{curved}")
+    print("Curved grades:")
+    for student in curved:
+        print(f" {student}: {curved[student]:.1f}")
+# Alice: 93.5, Bob: 99.0, Eve: 83.6
+# Test cap at 100
+    big_curve = math201 * 1.5
+    print(f"\nBig curve — Bob's grade: {big_curve['Bob']}") # 100 (capped)
+# === Part C: Comparisons ===
+    print("\n=== Part C: Comparisons ===")
+    print(f"CS 101 average: {cs101.average:.2f}")
+    print(f"Math 201 average: {math201.average:.2f}")
+    print(f"CS 101 == Math 201? {cs101 == math201}")
+    print(f"Math 201 < CS 101? {math201 < cs101}")
+    print(f"Math 201 <= CS 101? {math201 <= cs101}")
+# Sorting
+    classes = [math201, cs101, curved]
+    classes.sort()
+    print("\nSorted by average:")
+    for gb in classes:
+        print(f" {gb} — avg: {gb.average:.2f}")
