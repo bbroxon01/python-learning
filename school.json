@@ -1,0 +1,27 @@
+{
+  "school_name": "Python High",
+  "founded": 2020,
+  "students": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "gpa": 3.8
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "gpa": 3.5
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "gpa": 3.9
+    }
+  ],
+  "courses": [
+    "Math",
+    "Science",
+    "Programming"
+  ],
+  "active": true
+}
