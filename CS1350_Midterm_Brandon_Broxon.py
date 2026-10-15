@@ -103,3 +103,79 @@ print(attended_exactly_one(sessions))
 print(no__shows({"Ana", "Ben", "Fay", "Gus"}, sessions))
 
 summary(sessions)
+
+from abc import ABC, abstractmethod
+
+class Room(ABC):
+    def __init__(self, number, nights):
+        self.number = number
+        self.nights = nights
+        self.validate_nights(nights)
+
+    @staticmethod
+    def validate_nights(nights):
+        if nights <= 0:
+            raise ValueError("Nights must be positive")
+
+    @abstractmethod
+    def cost(self):
+        return self.nights * self.rate()
+
+    def receipt(self):
+        return f"Room number {self.number} ({self.nights} nights): ${self.cost():.2f}"
+
+class StandardRoom(Room):
+    def __init__(self, number, nights):
+        super().__init__(number, nights)
+        self._rate = 100.00
+
+    def cost(self):
+        return self.nights * self._rate
+
+class DeluxeRoom(Room):
+    def __init__(self, number, nights):
+        super().__init__(number, nights)
+        self._breakfast = 15.00
+        self.nights = nights
+    
+        
+    def cost(self):
+        return  super().cost() + (self._breakfast * self.nights)
+
+class Suite(Room):
+    def __init__(self, number, nights, discount_pct):
+        super().__init__(number, nights)
+        self._rate = 250.00
+        self._discount_pct = discount_pct if discount_pct is not None else 0
+    
+    def cost(self):
+        total_cost = 0
+        if self.nights >= 3:
+            total_cost = self.nights * self._rate * (1 - self._discount_pct / 100)
+        else:
+            total_cost = self.nights * self._rate
+        return total_cost
+
+def invoice(rooms):
+    total = sum(room.cost() for room in rooms)
+    for room in rooms:
+        print(room.receipt())
+    print(f"Total: ${total:.2f}")
+    return total
+
+# Test cases
+rooms = [
+StandardRoom(101, 2),
+DeluxeRoom(205, 2),
+Suite(901, 3),
+]
+total = invoice(rooms)
+# Room 101 (2 nights): $200.00
+# Room 205 (2 nights): $270.00
+# Room 901 (3 nights): $675.00
+# Total: $1145.00
+try:
+    Room.validate_nights(0)
+except ValueError as e:
+    print("Caught:", e)
+# Caught: Nights must be positive
